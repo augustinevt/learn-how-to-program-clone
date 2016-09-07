@@ -17,8 +17,10 @@ describe "the lesson feature" do
     course.lessons.create(name: "HTML Basics", content: "foo")
 
     visit courses_path
+
     click_link "Intro to Programming"
     click_link "HTML Basics"
+
 
     click_link "Edit"
     click_link "Delete"
