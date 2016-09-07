@@ -15,9 +15,15 @@ class LessonsController < ApplicationController
     end
   end
 
+
   def show
-      @course = Course.find(params[:course_id])
-      @lesson = Lesson.find(params[:id])
+    @course = Course.find(params[:course_id])
+    @lesson = Lesson.find(params[:id])
+
+    if params[:next]
+      @lesson = Lesson.find(params[:id]).next
+    end
+
   end
 
   def edit
@@ -44,6 +50,6 @@ class LessonsController < ApplicationController
   private
 
   def lesson_params
-    params.require('lesson').permit(:name, :content)
+    params.require('lesson').permit(:name, :content, :number)
   end
 end

@@ -24,7 +24,7 @@ describe "the lesson feature" do
 
     click_link "Edit"
     click_link "Delete"
-
+    
     expect(page).to_not(have_content("HTML Basics"))
   end
 

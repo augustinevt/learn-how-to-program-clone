@@ -1,7 +1,22 @@
+
+
+<h1><%= @course.name %></h1>
+
+
+<%if @lesson%>
+
+
 <h1><%= @course.name %>/<%= @lesson.name %></h1>
 
   <p><%= @lesson.content %></p>
+  <p><%= link_to "Edit", edit_course_lesson_path(@course, @lesson) %></p>
+  <p><%= @lesson.number %>/<%= link_to "next", course_lesson_path(@course, @lesson, next: 'true') %></p>
 
-<p><%= link_to "Edit", edit_course_lesson_path(@course, @lesson) %></p>
+
+<%else%>
+
+  <h1>This lesson is not ready yet</h1>
+
+<%end%>
 
 <p><%= link_to "Return to lessons", course_path(@course) %></p>
