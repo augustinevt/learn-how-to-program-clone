@@ -24,6 +24,10 @@ class LessonsController < ApplicationController
       @lesson = Lesson.find(params[:id]).next
     end
 
+    if params[:previous]
+      @lesson = Lesson.find(params[:id]).previous
+    end  
+
   end
 
   def edit
