@@ -1,0 +1,7 @@
+<h1><%= @course.name %>/<%= @lesson.name %></h1>
+
+  <p><%= @lesson.content %></p>
+
+<p><%= link_to "Edit", edit_course_lesson_path(@course, @lesson) %></p>
+
+<p><%= link_to "Return to lessons", course_path(@course) %></p>

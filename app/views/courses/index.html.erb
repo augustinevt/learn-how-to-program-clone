@@ -1,0 +1,4 @@
+
+<%@courses.each do |course|%>
+    <h1><%= link_to course.name, course_path(course)%></h1>
+<%end%>
